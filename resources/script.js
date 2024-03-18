@@ -51,3 +51,7 @@ btn.addEventListener('click', function() {
     
     output.innerHTML = randomQuote;
 });*/
+
+btn.addEventListener('touchstart', function(event) {
+    event.preventDefault(); // Prevent default behavior
+});
