@@ -37,7 +37,7 @@ btn.addEventListener('click', function() {
     output.innerHTML = randomQuote;
 });
 
-btn.addEventListener('touchstart', function() {
+/*btn.addEventListener('touchstart', function() {
     if (quotesToShow.length === 0) {
         // If all quotes have been shown, reset the array
         quotesToShow = [...quote];
@@ -50,4 +50,4 @@ btn.addEventListener('touchstart', function() {
     quotesToShow.splice(randomIndex, 1);
     
     output.innerHTML = randomQuote;
-});
+});*/
