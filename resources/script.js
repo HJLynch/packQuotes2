@@ -76,3 +76,10 @@ btn.addEventListener('click', function() {
     
     output.innerHTML = randomQuote;
 });
+
+//stops doubletap from zooming in on phones
+document.querySelector('.pushable').addEventListener('touchstart', function(event) {
+    if (event.touches.length > 1) {
+        event.preventDefault();
+    }
+}, { passive: false });
