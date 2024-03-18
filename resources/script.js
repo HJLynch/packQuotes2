@@ -22,7 +22,7 @@ let quote = [
 
 var quotesToShow = [...quote]; // Create a copy of the original array
 
-btn.addEventListener('click', function() {
+/*btn.addEventListener('click', function() {
     if (quotesToShow.length === 0) {
         // If all quotes have been shown, reset the array
         quotesToShow = [...quote];
@@ -35,7 +35,7 @@ btn.addEventListener('click', function() {
     quotesToShow.splice(randomIndex, 1);
     
     output.innerHTML = randomQuote;
-});
+});*/
 
 /*btn.addEventListener('touchstart', function() {
     if (quotesToShow.length === 0) {
@@ -52,6 +52,27 @@ btn.addEventListener('click', function() {
     output.innerHTML = randomQuote;
 });*/
 
-btn.addEventListener('touchstart', function(event) {
-    event.preventDefault(); // Prevent default behavior
+let clickable = true; // Flag to control button clickability
+
+btn.addEventListener('click', function() {
+    if (!clickable) return; // If button is not clickable, do nothing
+    
+    // Set button to not clickable and wait for half a second before making it clickable again
+    clickable = false;
+    setTimeout(function() {
+        clickable = true;
+    }, 200);
+    
+    if (quotesToShow.length === 0) {
+        // If all quotes have been shown, reset the array
+        quotesToShow = [...quote];
+    }
+    
+    var randomIndex = Math.floor(Math.random() * quotesToShow.length);
+    var randomQuote = quotesToShow[randomIndex];
+    
+    // Remove the displayed quote from the array
+    quotesToShow.splice(randomIndex, 1);
+    
+    output.innerHTML = randomQuote;
 });
