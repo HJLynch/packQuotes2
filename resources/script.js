@@ -36,3 +36,18 @@ btn.addEventListener('click', function() {
     
     output.innerHTML = randomQuote;
 });
+
+btn.addEventListener('touchstart', function() {
+    if (quotesToShow.length === 0) {
+        // If all quotes have been shown, reset the array
+        quotesToShow = [...quote];
+    }
+    
+    var randomIndex = Math.floor(Math.random() * quotesToShow.length);
+    var randomQuote = quotesToShow[randomIndex];
+    
+    // Remove the displayed quote from the array
+    quotesToShow.splice(randomIndex, 1);
+    
+    output.innerHTML = randomQuote;
+});
