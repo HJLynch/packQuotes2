@@ -113,3 +113,11 @@
     font-size: 1rem;
   }
   
+  @media (max-width: 768px) {
+    /* Adjustments for smaller screens (e.g., phones) */
+    #output {
+        margin-top: 10px; /* Reduce margin for smaller screens */
+        font-size: 0.8rem; /* Decrease font size for smaller screens */
+        text-align: center; /* Center the text */
+    }
+}
